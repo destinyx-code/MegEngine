@@ -9,14 +9,18 @@
  * "AS IS" BASIS, WITHOUT ARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
 
+// libraries
 #include "mgblar.h"
 #include "megbrain/common.h"
+#include <iostream>
 
+// main start
 int main(int argc, char **argv) {
     MGB_TRY {
         return mgb_load_and_run_main(argc, argv);
     } MGB_CATCH (std::exception &exc, {
         fprintf(stderr, "caught exception: %s\n", exc.what());
+        // end return for file
         return -2;
     })
 }
